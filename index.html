@@ -526,7 +526,7 @@
     <div class="contact-card">
       <h3>Get in Touch</h3>
       <p class="role">Ethan — Sales, Songcheng Motor</p>
-      <form action="mailto:Ethan@songchengmotor.com" method="post" enctype="text/plain">
+      <form onsubmit="sendMail(event, 'Ethan@songchengmotor.com')">
         <div class="form-group">
           <label for="name">Your Name *</label>
           <input type="text" id="name" name="name" placeholder="John Smith" required />
@@ -618,6 +618,16 @@
 <div class="floating-cta"><a href="#contact">📋 Request OEM Quote</a></div>
 
 <script>
+function sendMail(e, addr) {
+  e.preventDefault();
+  const f = e.target;
+  const name = f.querySelector('[name="name"]').value;
+  const email = f.querySelector('[name="email"]').value;
+  const oe = f.querySelector('[name="oe"]').value;
+  const msg = f.querySelector('[name="message"]').value;
+  const body = `Name: ${name}\nEmail: ${email}\nOE Number: ${oe}\n\nRequirements:\n${msg}`;
+  location.href = `mailto:${addr}?subject=OEM%20Quote%20Request&body=${encodeURIComponent(body)}`;
+}
 function filterOETable() {
   const input = document.getElementById('oe-search');
   const filter = input.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
