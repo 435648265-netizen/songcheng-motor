@@ -83,7 +83,7 @@
   .product-card .price { font-size: 15px; font-weight: 700; color: var(--orange); }
   .product-card .moq { font-size: 12px; color: var(--gray-500); }
 
-  .cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; text-align: center; margin-bottom: 48px; }
+  .cat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; text-align: center; margin-bottom: 48px; max-width: 640px; margin-left: auto; margin-right: auto; }
   .cat-item { padding: 24px 16px; border-radius: 10px; background: var(--white); border: 1px solid var(--gray-200); transition: all .15s; }
   .cat-item:hover { border-color: var(--red); background: #fef2f2; }
   .cat-item .icon { font-size: 32px; margin-bottom: 8px; }
@@ -164,8 +164,6 @@
     <div class="badge-row">
       <span class="badge">Oxygen Sensors</span>
       <span class="badge">NOx Sensors</span>
-      <span class="badge">ABS Sensors</span>
-      <span class="badge">TPS Sensors</span>
     </div>
     <div class="hero-buttons">
       <a href="#contact" class="btn btn-white" style="padding:14px 36px;font-size:15px">Request a Quote</a>
@@ -225,16 +223,6 @@
         <div class="label">NOx Sensors</div>
         <div class="sub">Diesel SCR · Euro 5/6 · Cummins / Bosch / Denso Compatible</div>
       </div>
-      <div class="cat-item">
-        <div class="icon">🛞</div>
-        <div class="label">ABS Sensors</div>
-        <div class="sub">Wheel Speed · Active &amp; Passive · Passenger &amp; Commercial</div>
-      </div>
-      <div class="cat-item">
-        <div class="icon">📐</div>
-        <div class="label">TPS Sensors</div>
-        <div class="sub">Throttle Position · Accelerator Pedal · Drive-by-Wire</div>
-      </div>
     </div>
 
     <h3 style="font-size:18px;font-weight:700;margin-bottom:20px">Featured Products</h3>
@@ -249,74 +237,65 @@
     <div class="product-grid">
 
       <div class="product-card">
-        <div class="img-box"><span class="placeholder">O2 Sensor Image<br>→ Replace with &lt;img&gt;</span></div>
+        <div class="img-box"><img src="images/bosch-denso-o2.png" alt="Bosch Denso O2 Sensor" loading="lazy" /></div>
         <div class="info">
-          <h4>Lambda O2 Sensor — Bosch / Denso Compatible<br>Front &amp; Rear, Zirconia Type, Heated 4-Wire</h4>
+          <h4>Lambda O2 Sensor — Bosch / Denso Compatible</h4>
           <div class="oem">OEM: 0258007057 · 0258007058 · 07M906262A</div>
           <div class="row"><span class="price">US $26.80-30.80</span><span class="moq">MOQ: 10 pcs</span></div>
         </div>
       </div>
 
       <div class="product-card">
-        <div class="img-box"><span class="placeholder">Audi/VW O2 Sensor Image<br>→ Replace with &lt;img&gt;</span></div>
+        <div class="img-box"><img src="images/audi-vw-o2.png" alt="Audi VW O2 Sensor" loading="lazy" /></div>
         <div class="info">
-          <h4>Lambda O2 Sensor — Audi / VW / SEAT / Skoda<br>5-Wire, OE Connector, TUV Certified Factory</h4>
+          <h4>Lambda O2 Sensor — Audi / VW / SEAT / Skoda</h4>
           <div class="oem">OEM: 04E906262AK · 03F906262 · 06E906265R</div>
           <div class="row"><span class="price">US $21-25</span><span class="moq">MOQ: 10 pcs</span></div>
         </div>
       </div>
 
       <div class="product-card">
-        <div class="img-box"><span class="placeholder">BMW O2 Sensor Image<br>→ Replace with &lt;img&gt;</span></div>
+        <div class="img-box"><img src="images/bmw-o2.png" alt="BMW O2 Sensor" loading="lazy" /></div>
         <div class="info">
-          <h4>Lambda O2 Sensor — BMW / European Cars<br>Pre-Cat &amp; Post-Cat, OEM Connector, TUV Certified</h4>
+          <h4>Lambda O2 Sensor — BMW / European Cars</h4>
           <div class="oem">OEM: 11787535269 · 11787570104 · 11787545074</div>
           <div class="row"><span class="price">US $19.80-23.80</span><span class="moq">MOQ: 2 pcs</span></div>
         </div>
       </div>
 
       <div class="product-card">
-        <div class="img-box"><span class="placeholder">Toyota/Honda O2 Sensor<br>→ Replace with &lt;img&gt;</span></div>
+        <div class="img-box"><img src="images/jdm-o2.png" alt="Japanese Car O2 Sensor" loading="lazy" /></div>
         <div class="info">
-          <h4>Heated O2 Sensor — Toyota / Honda / Nissan<br>4-Wire, Ceramic Element, Direct Plug-in</h4>
+          <h4>Heated O2 Sensor — Toyota / Honda / Nissan</h4>
           <div class="oem">OEM: 89465-20640 · 36531-PLM-A01 · 22693-AA010</div>
           <div class="row"><span class="price">US $3.99-6.99</span><span class="moq">MOQ: 10 pcs</span></div>
         </div>
       </div>
 
       <div class="product-card">
-        <div class="img-box"><span class="placeholder">NOx Sensor Image<br>→ Replace with &lt;img&gt;</span></div>
+        <div class="img-box"><img src="images/toyota-o2.png" alt="Toyota 3.5L V6 O2 Sensor" loading="lazy" /></div>
         <div class="info">
-          <h4>NOx Nitrogen Oxide Sensor — Diesel SCR<br>12V/24V, Euro 5/6 Compliant, CAN Bus Output</h4>
+          <h4>Air Fuel Ratio O2 Sensor — Toyota 3.5L V6</h4>
+          <div class="oem">OEM: 234-9155 · 89467-33020 · 234-9051</div>
+          <div class="row"><span class="price">US $6.99-9.99</span><span class="moq">MOQ: 10 pcs</span></div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="img-box"><img src="images/nox-55598161.png" alt="NOx Sensor 55598161" loading="lazy" /></div>
+        <div class="info">
+          <h4>NOx Nitrogen Oxide Sensor — Diesel SCR</h4>
           <div class="oem">OEM: 55598161 · 5WK97227 · 5802463098</div>
           <div class="row"><span class="price">US $15</span><span class="moq">MOQ: 5 pcs</span></div>
         </div>
       </div>
 
       <div class="product-card">
-        <div class="img-box"><span class="placeholder">Cummins NOx Sensor<br>→ Replace with &lt;img&gt;</span></div>
+        <div class="img-box"><img src="images/nox-5wk96751a.png" alt="Cummins NOx Sensor" loading="lazy" /></div>
         <div class="info">
-          <h4>NOx Sensor — Cummins ISB / ISX Compatible<br>Heavy-Duty Truck, 24V, J1939 CAN Protocol</h4>
+          <h4>NOx Sensor — Cummins ISB / ISX Compatible</h4>
           <div class="oem">OEM: 5WK96751A · 4326470 · 2894943</div>
           <div class="row"><span class="price">US $8-12</span><span class="moq">MOQ: 5 pcs</span></div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="img-box"><span class="placeholder">ABS Sensor Image<br>→ Replace with &lt;img&gt;</span></div>
-        <div class="info">
-          <h4>ABS Wheel Speed Sensor — Active Hall-Effect<br>Front &amp; Rear Axle, Sealed Connector, OE Fit</h4>
-          <div class="oem">OEM: 47910-3X00A · 45450-12190 · 57450-SNA-013</div>
-          <div class="row"><span class="price">US $5-12</span><span class="moq">MOQ: 20 pcs</span></div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="img-box"><span class="placeholder">TPS Sensor Image<br>→ Replace with &lt;img&gt;</span></div>
-        <div class="info">
-          <h4>Throttle Position Sensor — Universal<br>3-Pin &amp; 4-Pin, Linear Output, 5V Reference</h4>
-          <div class="oem">OEM: 89452-20050 · 35102-2B020 · 18919-5V2-A01</div>
-          <div class="row"><span class="price">US $4-9</span><span class="moq">MOQ: 20 pcs</span></div>
         </div>
       </div>
 
