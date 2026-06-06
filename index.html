@@ -526,7 +526,10 @@
     <div class="contact-card">
       <h3>Get in Touch</h3>
       <p class="role">Ethan — Sales, Songcheng Motor</p>
-      <form onsubmit="sendMail(event, 'Ethan@songchengmotor.com')">
+      <form action="https://formsubmit.co/Ethan@songchengmotor.com" method="POST">
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_subject" value="New OEM Quote Request — songchengmotor.com" />
+        <input type="hidden" name="_next" value="https://songchengmotor.com/#contact" />
         <div class="form-group">
           <label for="name">Your Name *</label>
           <input type="text" id="name" name="name" placeholder="John Smith" required />
