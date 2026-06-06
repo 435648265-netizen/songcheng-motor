@@ -251,8 +251,8 @@
           <li>Low MOQ from 2 pcs for trial orders — sample available within 3 days</li>
         </ul>
         <div style="margin-top:20px">
-          <span class="cert-tag">ISO 9001</span>
-          <span class="cert-tag">IATF 16949</span>
+          <a href="#contact" class="cert-tag" title="Request ISO 9001 certificate — contact us">📄 ISO 9001</a>
+          <a href="#contact" class="cert-tag" title="Request IATF 16949 certificate — contact us">📄 IATF 16949</a>
           <span class="cert-tag">12-Month Warranty</span>
           <span class="cert-tag">OEM/ODM</span>
         </div>
@@ -270,7 +270,10 @@
 <section id="oe-ref" class="section">
   <div class="container">
     <h2 class="section-title">OE Part Number Reference</h2>
-    <p class="section-subtitle">Search by your OE number — if it's not listed, contact us for fitment verification.</p>
+    <p class="section-subtitle">Type your OE number below to find matching sensors — if it's not listed, contact us for fitment verification.</p>
+    <div style="max-width:500px;margin:0 auto 24px">
+      <input type="text" id="oe-search" placeholder="🔍 Search by OE number (e.g. 0258007057 or 5WK96751A)..." style="width:100%;padding:14px 18px;border:2px solid var(--gray-200);border-radius:10px;font-size:15px;font-family:monospace;transition:border-color .15s" oninput="filterOETable()" />
+    </div>
     <div class="oe-table-wrap">
       <table class="oe-table">
         <thead>
@@ -290,7 +293,9 @@
         </tbody>
       </table>
     </div>
-    <p style="text-align:center;margin-top:20px;color:var(--gray-500);font-size:13px">Don't see your OE number? <a href="#contact" style="font-weight:600">Contact us</a> — we can source or manufacture to your spec.</p>
+    <p id="no-oe-result" style="display:none;text-align:center;margin-top:16px;color:var(--red);font-size:14px;font-weight:600">OE number not listed above? <a href="#contact">Contact us</a> — we can source or manufacture to your spec.</p>
+    <p style="text-align:center;margin-top:12px;color:var(--gray-500);font-size:13px">Don't see your OE number? <a href="#contact" style="font-weight:600">Contact us</a> — we can source or manufacture to your spec.</p>
+    <p style="text-align:center;margin-top:8px;font-size:14px;font-weight:600;color:var(--gray-800)">📦 <span style="color:var(--green)">In Stock</span> for Common OE Models &nbsp;|&nbsp; 💰 <span style="color:var(--red)">Bulk Discount</span> for Orders &gt;500 pcs</p>
   </div>
 </section>
 
@@ -575,6 +580,33 @@
 
 <!-- Floating CTA -->
 <div class="floating-cta"><a href="#contact">📋 Request OEM Quote</a></div>
+
+<script>
+function filterOETable() {
+  const input = document.getElementById('oe-search');
+  const filter = input.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
+  const table = document.querySelector('.oe-table');
+  const rows = table.getElementsByTagName('tr');
+  let visibleCount = 0;
+  for (let i = 1; i < rows.length; i++) {
+    const oeCell = rows[i].getElementsByClassName('oe-num')[0];
+    if (oeCell) {
+      const oeText = oeCell.textContent.toUpperCase().replace(/[^A-Z0-9]/g, '');
+      if (oeText.indexOf(filter) > -1 || filter === '') {
+        rows[i].style.display = '';
+        visibleCount++;
+      } else {
+        rows[i].style.display = 'none';
+      }
+    }
+  }
+  // Show/hide no-results message
+  const noResult = document.getElementById('no-oe-result');
+  if (noResult) {
+    noResult.style.display = (visibleCount === 0 && filter !== '') ? 'block' : 'none';
+  }
+}
+</script>
 
 </body>
 </html>
